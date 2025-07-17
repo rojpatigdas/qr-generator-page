@@ -2,6 +2,10 @@
 
 A simple, modern web-based QR code generator that allows you to create QR codes from URLs, text, or any other content. Built with HTML, CSS, and JavaScript.
 
+## 🌐 Live Demo
+
+**Try it now:** [https://rojpatigdas.github.io/qr-generator-page/](https://rojpatigdas.github.io/qr-generator-page/)
+
 ## Features
 
 - 🎯 **Simple & Clean Interface** - Modern, minimal design that's easy to use
@@ -14,7 +18,8 @@ A simple, modern web-based QR code generator that allows you to create QR codes 
 ## How to Use
 
 ### 1. Open the Application
-- Simply open `index.html` in any modern web browser
+- **Online:** Visit [https://rojpatigdas.github.io/qr-generator-page/](https://rojpatigdas.github.io/qr-generator-page/)
+- **Local:** Simply open `index.html` in any modern web browser
 - No installation or setup required!
 
 ### 2. Generate a QR Code
@@ -81,7 +86,7 @@ This QR code generator works in all modern browsers:
 - **QR Code Library**: Uses [qrcodejs](https://davidshimjs.github.io/qrcodejs/) for reliable QR code generation
 - **Error Correction**: High-level error correction for better scanning reliability
 - **Image Format**: PNG format for high quality and transparency support
-- **Resolution**: 256pixels for optimal clarity
+- **Resolution**: 256 pixels for optimal clarity
 
 ## File Structure
 
