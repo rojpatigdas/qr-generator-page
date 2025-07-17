@@ -3,16 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR Code Generator</title>
+    <title>QR Code Generator - Free Online Tool</title>
+    <meta name="description" content="Generate QR codes instantly for free. Convert URLs, text, contact info, and WiFi credentials to QR codes. Download as PNG images.">
+    <meta name="keywords" content="QR code generator, QR code maker, free QR code, QR code creator, QR code online">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- Top Banner Ad -->
+    <div class="ad-banner ad-top">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
     <div class="container">
         <header>
             <h1>QR Code Generator</h1>
             <p>Generate QR codes for any URL or text</p>
         </header>
+        <!--
+        <div class="premium-banner">
+            <span class="premium-icon">⭐</span>
+            <span class="premium-text">Upgrade to Premium for advanced features!</span>
+            <button class="premium-btn" onclick="showPremiumModal()">Learn More</button>
+        </div>
+        -->
         <main>
             <div class="input-group">
                 <label for="qr-input">Enter your text or URL:</label>
@@ -28,7 +50,49 @@
             <div class="error-message" id="error-message" style="display:none;"></div>
         </main>
     </div>
+
+    <!-- Bottom Banner Ad -->
+    <div class="ad-banner ad-bottom">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_PUBLISHER_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Premium Modal -->
+    <div id="premium-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closePremiumModal()">&times;</span>
+            <h2>Upgrade to Premium</h2>
+            <ul>
+                <li>🎨 Custom Colors</li>
+                <li>📊 Analytics</li>
+                <li>🔗 Dynamic QR Codes</li>
+                <li>📱 Bulk Generation</li>
+            </ul>
+            <button class="upgrade-btn" onclick="alert('Premium features coming soon!')">Upgrade Now</button>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        function showPremiumModal() {
+            document.getElementById('premium-modal').style.display = 'block';
+        }
+        function closePremiumModal() {
+            document.getElementById('premium-modal').style.display = 'none';
+        }
+        // Optional: close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('premium-modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html> 
