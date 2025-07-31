@@ -81,7 +81,7 @@ header p {
 #qr-container {
   margin: 16px auto 20px auto;
   background: #f7f8fa;
-  padding: 16px;
+  padding: 32px;
   border-radius: 12px;
   display: inline-block;
 }

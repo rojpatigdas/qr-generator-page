@@ -34,19 +34,54 @@ function generateQR() {
     return;
   }
   qrContainer.innerHTML = '';
-  // Generate QR code as an <img>
-  const qr = new QRCode(qrContainer, {
+  
+  // Create a temporary container for QR generation
+  const tempContainer = document.createElement('div');
+  tempContainer.style.display = 'none';
+  document.body.appendChild(tempContainer);
+  
+  // Generate QR code
+  const qr = new QRCode(tempContainer, {
     text: value,
     width: 256,
     height: 256,
     correctLevel: QRCode.CorrectLevel.H
   });
+  
   // Wait for the image to be rendered
   setTimeout(() => {
-    const img = qrContainer.querySelector('img');
+    const img = tempContainer.querySelector('img');
     if (img) {
-      lastQRDataUrl = img.src;
+             // Create canvas with margin
+       const margin = 16; // 16px margin on each side
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      // Set canvas size with margin
+      canvas.width = 256 + (margin * 2);
+      canvas.height = 256 + (margin * 2);
+      
+      // Fill background with white
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw QR code in center
+      ctx.drawImage(img, margin, margin, 256, 256);
+      
+      // Convert canvas to data URL for download
+      lastQRDataUrl = canvas.toDataURL('image/png');
+      
+      // Create display image (without margin for visual consistency)
+      const displayImg = document.createElement('img');
+      displayImg.src = img.src;
+      displayImg.style.width = '256px';
+      displayImg.style.height = '256px';
+      qrContainer.appendChild(displayImg);
+      
       outputGroup.style.display = 'block';
+      
+      // Clean up temporary container
+      document.body.removeChild(tempContainer);
     }
   }, 100);
 }
